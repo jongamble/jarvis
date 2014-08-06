@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		        style: 'compressed'
 		      },
 		      files: {                         // Dictionary of files
-		        'lib/css/main.css': 'src/sass/main.scss'
+		        'public/css/main.css': 'public/src/sass/main.scss'
 		      }
 		    }
 		},
@@ -20,9 +20,9 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: 'src/img/',
+					cwd: 'public/src/img/',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'lib/img/'
+					dest: 'public/img/'
 				}]
 			}
 		},
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'lib/js/scripts.js': ['src/js/vendor/*.js', 'src/js/main.js'],
-					'lib/js/ie8.js': ['src/js/fallbacks-polyfills/*.js', 'src/js/ie8.js'],
+					'public/js/scripts.js': ['public/src/js/vendor/*.js', 'src/js/main.js'],
+					'public/js/ie8.js': ['public/src/js/fallbacks-polyfills/*.js', 'src/js/ie8.js'],
 				},
 			},
 		},
@@ -43,9 +43,9 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 				files: {
-					'lib/js/modernizr-min.js': ['src/js/modernizr.2.7.2.js'],
-					'lib/js/scripts-min.js': ['lib/js/scripts.js'],
-					'lib/js/ie8-min.js': ['lib/js/ie8.js'],
+					'public/js/modernizr-min.js': ['public/src/js/modernizr.2.7.2.js'],
+					'public/js/scripts-min.js': ['public/js/scripts.js'],
+					'public/js/ie8-min.js': ['public/js/ie8.js'],
 				}
 			}
 		},
@@ -55,28 +55,28 @@ module.exports = function(grunt) {
 				force: true
 			},
 			css: {
-				files: ['src/sass/**/*'],
+				files: ['public/src/sass/**/*'],
 				tasks: ['sass'],
 				options: {
 					livereload: true
 				}
 			},
 			markup: {
-				files: ['*.html'],
+				files: ['**/*.jade'],
 				tasks: [],
 				options: {
 					livereload: true,
 				}
 			},
 			javascript: {
-				files: ['src/js/**/*.js'],
+				files: ['public/src/js/**/*.js'],
 				tasks: ['concat', 'uglify'],
 				options: {
 					livereload: true
 				}
 			},
 			img: {
-				files: ['src/img/*'],
+				files: ['public/src/img/*'],
 				tasks: ['imagemin'],
 				options: {
 					livereload: true
