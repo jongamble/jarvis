@@ -5,34 +5,47 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title></title>
 		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="lib/css/main.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-		<script src="js/min/modernizr.min.js"></script>
-		<script src="js/min/bootstrap.min.js"></script>
+		<script src="lib/js/modernizr-min.js"></script>
 	</head>
 	<body>
-		<header class="header">
-			<div class="wrapper">
-				
+		<header class="home-header">
+			<div class="container">
 				<h1>Jarvis</h1>
 				<h2>The Home Automation System</h2>
 			</div>
 		</header>
-		<section class="main-content">
-			<div class="wrapper">
-				<ul class="home-button-list">
-					<li class="home-button-item"><a href="#">Lights</a></li>
-					<li class="home-button-item"><a href="#">Garage</a></li>
-					<li class="home-button-item"><a href="#">Sensors</a></li>
-					<li class="home-button-item"><a href="#">Settings</a></li>
-				</ul>
+		<section class="home-content">
+			<div class="container">
+				<h2>Choose a system:</h2>
+				<div class="home-button-list">
+					<a class="home-button-item" href="#">
+						<i class="fa fa-lightbulb-o"></i>
+						Lights
+					</a>
+					<a class="home-button-item" href="#">
+						<i class="fa fa-home"></i>
+						Garage
+					</a>
+					<a class="home-button-item" href="#">
+						<i class="fa fa-dashboard"></i>
+						Sensors
+					</a>
+					<a class="home-button-item" href="#">
+						<i class="fa fa-cog"></i>
+						Settings
+					</a>
+				</div>
 			</div>
 		</section>
 		
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/min/main.min.js"></script>
+		<script src="lib/js/scripts-min.js"></script>
+		<script src="//localhost:35729/livereload.js"></script>
 	</body>
 </html>
