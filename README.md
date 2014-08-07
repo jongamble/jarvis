@@ -1,10 +1,17 @@
-# Jarvis - v.0.2.0
+# Jarvis - v.0.2.1
 
 Home automation utilizing Node.js on a network of Raspberry Pi and Arduino microcontrollers.
 
+# Future updates
+- Incorporate mongodb
+- create collections for each of the different home systems
+- use mongo collections to power internal home system pages
 
+# Changelog
 
-# Version History
+## Version 0.2.1
+- Building out internal lights page
+- Creating js and css for switch buttons and controllers
 
 ## Version 0.2.0
 - Setting up Node app architecture
