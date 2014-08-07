@@ -17,6 +17,10 @@ app.use(express.static('public'));
 
 
 require('./app/lights.js')(app);
+require('./app/garage.js')(app);
+require('./app/sensors.js')(app);
+require('./app/settings.js')(app);
+
 // Set server port
 app.listen(port);
 console.log('server is running');
