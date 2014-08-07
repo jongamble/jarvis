@@ -1,4 +1,44 @@
-header.internal-header
+header.internal-header-small.visible-xs-block.visible-sm-block
 	.container
-		a.header-button-home(href="/")
-			i.fa.fa-home
+		.row
+			a.col-xs-3.header-button-home(href="/")
+				i.fa.fa-home
+			h1.col-xs-6 Jarvis
+			a.col-xs-3.header-button-menu(href="#")
+				i.fa.fa-bars
+header.internal-header.visible-md-block.visible-lg-block
+	.container
+		.row
+			.col-xs-5
+				h1 Jarvis <small>The Home Automation System</small>
+			.col-xs-7
+				ul.internal-header-nav
+					li
+						a(href="/") Home
+					li
+						a(href="/lights") Lights
+					li
+						a(href="#") Sensors
+					li
+						a(href="#") Garage
+					li
+						a(href="#") Settings
+
+
+.internal-menu
+	ul
+		li
+			.container
+				a(href="/") Home
+		li
+			.container
+				a(href="/lights") Lights
+		li
+			.container
+				a(href="#") Sensors
+		li
+			.container
+				a(href="#") Garage
+		li
+			.container
+				a(href="#") Settings
