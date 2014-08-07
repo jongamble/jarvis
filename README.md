@@ -1,4 +1,4 @@
-# Jarvis - v.0.2.3
+# Jarvis - v.0.3.0
 
 Home automation utilizing Node.js on a network of Raspberry Pi and Arduino microcontrollers.
 
@@ -9,6 +9,10 @@ Home automation utilizing Node.js on a network of Raspberry Pi and Arduino micro
 - Create forms that set up and delete lights in settings
 
 # Changelog
+
+## Version 0.3.0
+- Installing mongoose and mongo
+- Setting up connection to mongodb
 
 ## Version 0.2.3
 - Creating templates for other pages
