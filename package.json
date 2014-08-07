@@ -19,7 +19,8 @@
   "dependencies": {
     "express": "~4.8.0",
     "jade": "~1.5.0",
-    "connect-flash": "~0.1.1"
+    "connect-flash": "~0.1.1",
+    "mongoose": "~3.8.14"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

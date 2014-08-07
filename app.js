@@ -2,8 +2,16 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 4000;
+var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
+
+
+var configDB = require('./config/database.js');
+
+// configuration ===============================================================
+mongoose.connect(configDB.url); // connect to our database
+
 
 // views as directory for all template files
 app.set('views', path.join(__dirname, 'views'));

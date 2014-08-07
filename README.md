@@ -6,6 +6,7 @@ Home automation utilizing Node.js on a network of Raspberry Pi and Arduino micro
 - Incorporate mongodb
 - create collections for each of the different home systems
 - use mongo collections to power internal home system pages
+- Create forms that set up and delete lights in settings
 
 # Changelog
 
