@@ -1,0 +1,34 @@
+.internal-header {
+
+}
+
+.internal-content {
+
+}
+	
+	.table .switchLabel {
+		font-size: 22px;
+		line-height: 60px;
+		padding-left:15px;
+	}
+	.switchButton {
+		float:right;
+		font-size: 35px;
+		line-height: 60px;
+		padding:0 15px;
+		color:#666;
+		@include radial-gradient(circle at 50% 50%, rgba(230,0,0,.5) 10%, rgba(230,0,0,.2) 50%, rgba(230,0,0,.05) 60%, rgba(255,255,255,0) 75%);
+
+		&:hover {
+			color:#00da00;
+		}
+
+		&.active {
+			@include radial-gradient(circle at 50% 50%, rgba(0,230,0,.5) 10%, rgba(0,230,0,.2) 50%, rgba(0,230,0,.05) 60%, rgba(255,255,255,0) 75%);
+
+
+			&:hover {
+				color:#f00
+			}
+		}
+	}

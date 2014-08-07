@@ -32,8 +32,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'public/js/scripts.js': ['public/src/js/vendor/*.js', 'src/js/main.js'],
-					'public/js/ie8.js': ['public/src/js/fallbacks-polyfills/*.js', 'src/js/ie8.js'],
+					'public/js/scripts.js': ['public/src/js/vendor/*.js', 'public/src/js/main.js'],
+					'public/js/ie8.js': ['public/src/js/fallbacks-polyfills/*.js', 'public/js/ie8.js'],
 				},
 			},
 		},
