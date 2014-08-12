@@ -10,6 +10,10 @@ Home automation utilizing Node.js on a network of Raspberry Pi and Arduino micro
 
 # Changelog
 
+## Version 0.3.1
+- Adding mongoose schemas and setting up routes to utilize the mongo data
+- Adding angular and directives to the views
+
 ## Version 0.3.0
 - Installing mongoose and mongo
 - Setting up connection to mongodb
