@@ -24,7 +24,7 @@ app.use(express.static('public'));
     });
 
 
-require('./app/lights.js')(app);
+require('./app/lights.js')(app, mongoose);
 require('./app/garage.js')(app);
 require('./app/sensors.js')(app);
 require('./app/settings.js')(app);
