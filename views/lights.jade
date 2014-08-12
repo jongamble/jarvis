@@ -1,5 +1,5 @@
 include ./inc/header.jade
-	body
+	body(ng-controller="lightsController")
 		include ./inc/internal-head.jade
 		section.internal-content
 			.container
@@ -8,40 +8,10 @@ include ./inc/header.jade
 				div.panel.panel-default
 					div.panel-heading Light Groups
 					table.table.table-striped
-						tr
-							td.switchLabel Living Room
+						tr(ng-repeat="light in lights")
+							td.switchLabel {{light.name}}
 							td
-								a.switchButton(href="/lights/livingRoom")
-									i.fa.fa-power-off
-						tr
-							td.switchLabel Dining Room
-							td
-								a.switchButton.active(href="/lights/diningRoom")
-									i.fa.fa-power-off
-						tr
-							td.switchLabel Kitchen
-							td
-								a.switchButton(href="/lights/kitchen")
-									i.fa.fa-power-off
-						tr
-							td.switchLabel Bedroom 1
-							td
-								a.switchButton(href="/lights/bedroom1")
-									i.fa.fa-power-off
-						tr
-							td.switchLabel Bedroom 2
-							td
-								a.switchButton.active(href="/lights/bedroom2")
-									i.fa.fa-power-off
-						tr
-							td.switchLabel Bathroom 1
-							td
-								a.switchButton(href="/lights/bathroom1")
-									i.fa.fa-power-off
-						tr
-							td.switchLabel Bathroom 2
-							td
-								a.switchButton(href="/lights/bathroom2")
-									i.fa.fa-power-off
+								a.switchButton(href="/lights/{{light.id}}")
+									i.fa.fa-power-off(ng-class="{active: light.status}")
 		
 include ./inc/footer.jade
