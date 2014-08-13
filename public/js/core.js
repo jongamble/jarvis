@@ -16,12 +16,13 @@ function lightsController($scope, $http) {
 
 	
 	$scope.lightSwitchToggle = function($index){
-		$http.post('/lights/lightSwitch/' + $index)
+		console.log($index);
+		/*$http.post('/lights/lightSwitch/' + $index)
 			.success(function(){
 				console.log('Light Switched: '+$index);
 			}).
 			error(function(data){
 				console.log('Error: ' + data);
-			});
+			});*/
 	};
 };
