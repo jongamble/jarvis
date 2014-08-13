@@ -12,6 +12,6 @@ include ./inc/header.jade
 							td.switchLabel {{light.name}}
 							td
 								a.switchButton(href="/lights/lightSwitch/{{light.id}}")
-									i.fa.fa-power-off(ng-class="{active: {{light.status}}}")
+									i.fa.fa-power-off(ng-class="{active: {{light.status}}} === true")
 		
 include ./inc/footer.jade
