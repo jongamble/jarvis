@@ -14,9 +14,9 @@ function lightsController($scope, $http) {
 			console.log('Error: ' + data);
 		});
 
-	$scope.switchToggle = true;
-	$scope.lightSwitchToggle = function(){
-		$scope.switchToggle = $scope.switchToggle === false ? true: false;
+	$index.switchToggle = true;
+	$scope.lightSwitchToggle = function($index){
+		$index.switchToggle = $index.switchToggle === false ? true: false;
 		event.preventDefault();
 	};
 };
