@@ -17,5 +17,6 @@ function lightsController($scope, $http) {
 	$scope.switchToggle = true;
 	$scope.lightSwitchToggle = function(){
 		$scope.switchToggle = $scope.switchToggle === false ? true: false;
+		event.preventDefault();
 	};
 };
