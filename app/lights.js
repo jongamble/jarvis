@@ -19,9 +19,9 @@ module.exports = function(app, mongoose) {
 	});
 
 	app.get('/lights/lightSwitch/:id', function(req,res){
-		Lights.findAndModify({id: req.params.id}, function(err, light){
+		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
-			{light.status} = !light.status;
+			light.status = !light.status;
 			console.log(light);
 			light.save(function(err){
 				if (err) console.log(err);
