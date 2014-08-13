@@ -30,7 +30,7 @@ function lightsController($scope, $http) {
 	// when landing on the page, get all todos and show them
 	$http.get('/admin/listLights')
 		.success(function(data) {
-			$scope.users = data;
+			$scope.lights = data;
 			//console.log(data);
 		})
 		.error(function(data) {
