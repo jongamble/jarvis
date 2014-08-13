@@ -13,4 +13,9 @@ function lightsController($scope, $http) {
 		.error(function(data) {
 			console.log('Error: ' + data);
 		});
+
+	$scope.switchToggle = true;
+	$scope.lightSwitchToggle = function(){
+		$scope.switchToggle = $scope.switchToggle === false ? true: false;
+	};
 };
