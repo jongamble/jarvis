@@ -12,4 +12,10 @@ module.exports = function(app, mongoose) {
       });
     });
 
+    app.get('/lights/listLights', function(req, res){
+		Lights.find().exec(function (err, items) {
+			res.json(items);
+	   	});
+	});
+
 }

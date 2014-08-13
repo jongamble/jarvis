@@ -5,7 +5,7 @@ function lightsController($scope, $http) {
 	$scope.formData = {};
 
 	// when landing on the page, get all todos and show them
-	$http.get('/admin/listLights')
+	$http.get('/lights/listLights')
 		.success(function(data) {
 			$scope.lights = data;
 			//console.log(data);
