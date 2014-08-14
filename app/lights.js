@@ -23,10 +23,6 @@ module.exports = function(app, mongoose, gpio) {
 			if (err) return next(err);
 			// Toggle LED
 			gpio.setup(11, gpio.DIR_OUT, write);
-			gpio.destroy(function() {
-				console.log('Closed pins');
-				return;
-			});
 			if(light.status){
 				function write(){
 					gpio.write(11, false, function(err){
