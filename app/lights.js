@@ -23,9 +23,9 @@ module.exports = function(app, mongoose, gpio) {
 			if (err) return next(err);
 			light.status = !light.status;
 			console.log(light);
-			gpio.setup(37, gpio.DIR_OUT, write);
+			gpio.setup(11, gpio.DIR_OUT, write);
 			function write(){
-				gpio.write(37, true, function(err){
+				gpio.write(11, true, function(err){
 					if(err) throw err;
 					console.log('Written to pin');
 				});
