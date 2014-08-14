@@ -5,6 +5,7 @@ var port = process.env.PORT || 4000;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
+var gpio = require('rpi-gpio');
 
 
 var configDB = require('./config/database.js');
@@ -24,7 +25,7 @@ app.use(express.static('public'));
     });
 
 
-require('./app/lights.js')(app, mongoose);
+require('./app/lights.js')(app, mongoose, gpio);
 require('./app/garage.js')(app);
 require('./app/sensors.js')(app);
 require('./app/settings.js')(app);

@@ -2,7 +2,7 @@
 
 var Lights	=	require('./models/lights')
 
-module.exports = function(app, mongoose) { 
+module.exports = function(app, mongoose, gpio) { 
 	// set routes
     app.get('/lights', function(req, res) {
       Lights.find().exec(function(err, items){
@@ -23,6 +23,13 @@ module.exports = function(app, mongoose) {
 			if (err) return next(err);
 			light.status = !light.status;
 			console.log(light);
+			gpio.setup(26, gpio.DIR_OUT, write);
+			function write(){
+				gpio.write(26, true, function(err){
+					if(err) throw err;
+					console.log('Written to pin');
+				});
+			}
 			light.save(function(err){
 				if (err) console.log(err);
 			    res.redirect('/lights');
