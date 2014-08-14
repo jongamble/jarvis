@@ -40,10 +40,12 @@ module.exports = function(app, mongoose, gpio) {
 
 				}
 			}
-			gpio.destroy(function() {
-				console.log('Closed pins');
-				return;
-			});
+			setTimeout(function() {
+				gpio.destroy(function() {
+					console.log('Closed pins');
+					return;
+				});
+			}, 2000);
 			// Write to DB
 			light.status = !light.status;
 			console.log(light);
