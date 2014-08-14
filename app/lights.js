@@ -29,7 +29,12 @@ module.exports = function(app, mongoose, gpio) {
 						if(err) throw err;
 						console.log('Written to pin');
 					});
-
+					setTimeout(function() {
+						gpio.destroy(function() {
+							console.log('Closed pins');
+							return;
+						});
+					}, 800);
 				}
 			}else{
 				function write(){
@@ -37,15 +42,15 @@ module.exports = function(app, mongoose, gpio) {
 						if(err) throw err;
 						console.log('Written to pin');
 					});
-
+					setTimeout(function() {
+						gpio.destroy(function() {
+							console.log('Closed pins');
+							return;
+						});
+					}, 800);
 				}
 			}
-			setTimeout(function() {
-				gpio.destroy(function() {
-					console.log('Closed pins');
-					return;
-				});
-			}, 2000);
+
 			// Write to DB
 			light.status = !light.status;
 			console.log(light);
