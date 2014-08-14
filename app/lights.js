@@ -28,12 +28,22 @@ module.exports = function(app, mongoose, gpio) {
 				console.log('Closed pins');
 				return;
 			});
-			function write(){
-				gpio.write(11, true, function(err){
-					if(err) throw err;
-					console.log('Written to pin');
-				});
+			if(light.status){
+				function write(){
+					gpio.write(11, false, function(err){
+						if(err) throw err;
+						console.log('Written to pin');
+					});
 
+				}
+			}else{
+				function write(){
+					gpio.write(11, true, function(err){
+						if(err) throw err;
+						console.log('Written to pin');
+					});
+
+				}
 			}
 			light.save(function(err){
 				if (err) console.log(err);
