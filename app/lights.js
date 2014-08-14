@@ -21,8 +21,7 @@ module.exports = function(app, mongoose, gpio) {
 	app.get('/lights/lightSwitch/:id', function(req,res){
 		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
-			light.status = !light.status;
-			console.log(light);
+			// Toggle LED
 			gpio.setup(11, gpio.DIR_OUT, write);
 			gpio.destroy(function() {
 				console.log('Closed pins');
@@ -45,6 +44,13 @@ module.exports = function(app, mongoose, gpio) {
 
 				}
 			}
+			gpio.destroy(function() {
+				console.log('Closed pins');
+				return;
+			});
+			// Write to DB
+			light.status = !light.status;
+			console.log(light);
 			light.save(function(err){
 				if (err) console.log(err);
 				res.redirect('/lights');
