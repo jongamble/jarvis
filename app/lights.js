@@ -31,6 +31,7 @@ module.exports = function(app, mongoose, gpio) {
 				});
 				gpio.destroy(function() {
 		            console.log('Closed pins');
+		            return;
 		        });
 			}
 			light.save(function(err){
