@@ -22,11 +22,10 @@ module.exports = function(app, mongoose, gpio) {
 		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
 			// Toggle LED
-			var pinNum = parseInt(light.pin);
 			if(light.status == true){
-				gpio.setup(pinNum, gpio.DIR_OUT, writeOff);
+				gpio.setup(light.pin, gpio.DIR_OUT, writeOff);
 				function writeOff(){
-					gpio.write(11, false, function(err){
+					gpio.write(light.pin, false, function(err){
 						if(err) throw err;
 						console.log('Pin Off');
 					});
@@ -38,9 +37,9 @@ module.exports = function(app, mongoose, gpio) {
 					}, 800);
 				}
 			}else{
-				gpio.setup(pinNum, gpio.DIR_OUT, writeOn);
+				gpio.setup(light.pin, gpio.DIR_OUT, writeOn);
 				function writeOn(){
-					gpio.write(11, true, function(err){
+					gpio.write(light.pin, true, function(err){
 						if(err) throw err;
 						console.log('Pin On');
 					});
