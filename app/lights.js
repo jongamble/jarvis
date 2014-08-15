@@ -22,7 +22,7 @@ module.exports = function(app, mongoose, gpio) {
 		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
 			// Toggle LED
-			int pinNum = light.pin;
+			var pinNum = parseInt(light.pin);
 			if(light.status == true){
 				gpio.setup(pinNum, gpio.DIR_OUT, writeOff);
 				function writeOff(){
