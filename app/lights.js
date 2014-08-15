@@ -22,35 +22,37 @@ module.exports = function(app, mongoose, gpio) {
 		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
 			// Toggle LED
-			pinNum = light.pin;
+			var pinNum = light.pin;
+
+			function writeOff(){
+				gpio.write(pinNum, false, function(err){
+					if(err) throw err;
+					console.log(pinNum + ' Pin Off');
+				});
+				setTimeout(function() {
+					gpio.destroy(function() {
+						console.log('Closed pins');
+						return;
+					});
+				}, 800);
+			}
+			function writeOn(){
+				gpio.write(pinNum, true, function(err){
+					if(err) throw err;
+					console.log(pinNum + 'Pin On');
+				});
+				setTimeout(function() {
+					gpio.destroy(function() {
+						console.log('Closed pins');
+						return;
+					});
+				}, 800);
+			}
 			if(light.status == true){
 				gpio.setup(pinNum, gpio.DIR_OUT, writeOff);
-				function writeOff(){
-					gpio.write(pinNum, false, function(err){
-						if(err) throw err;
-						console.log(pinNum + ' Pin Off');
-					});
-					setTimeout(function() {
-						gpio.destroy(function() {
-							console.log('Closed pins');
-							return;
-						});
-					}, 800);
-				}
+				
 			}else{
 				gpio.setup(pinNum, gpio.DIR_OUT, writeOn);
-				function writeOn(){
-					gpio.write(pinNum, true, function(err){
-						if(err) throw err;
-						console.log(pinNum + 'Pin On');
-					});
-					setTimeout(function() {
-						gpio.destroy(function() {
-							console.log('Closed pins');
-							return;
-						});
-					}, 800);
-				}
 			}
 
 			// Write to DB
