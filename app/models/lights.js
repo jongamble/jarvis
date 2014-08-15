@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var lightSchema = mongoose.Schema({
 	id: mongoose.Schema.Types.Mixed,
 	name: mongoose.Schema.Types.Mixed,
+	pin: mongoose.Schema.Types.Mixed,
 	status: { type: Boolean, default: false}
 });
 
