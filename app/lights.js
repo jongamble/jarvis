@@ -24,8 +24,8 @@ module.exports = function(app, mongoose, gpio) {
 			// Toggle LED
 			var pinNum = parseInt(light.pin);
 			if(light.status == true){
-				gpio.setup(pinNum, gpio.DIR_OUT, writeOff);
-				function writeOff(){
+				gpio.setup(pinNum, gpio.DIR_OUT, writeOff(pinNum));
+				function writeOff(pinNum){
 					gpio.write(pinNum, false, function(err){
 						if(err) throw err;
 						console.log(pinNum + ' Pin Off');
@@ -38,8 +38,8 @@ module.exports = function(app, mongoose, gpio) {
 					}, 800);
 				}
 			}else{
-				gpio.setup(pinNum, gpio.DIR_OUT, writeOn);
-				function writeOn(){
+				gpio.setup(pinNum, gpio.DIR_OUT, writeOn(pinNum));
+				function writeOn(pinNum){
 					gpio.write(pinNum, true, function(err){
 						if(err) throw err;
 						console.log(pinNum + 'Pin On');
