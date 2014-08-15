@@ -28,7 +28,7 @@ module.exports = function(app, mongoose, gpio) {
 				function writeOff(){
 					gpio.write(pinNum, false, function(err){
 						if(err) throw err;
-						console.log('Pin Off');
+						console.log(pinNum + ' Pin Off');
 					});
 					setTimeout(function() {
 						gpio.destroy(function() {
@@ -42,7 +42,7 @@ module.exports = function(app, mongoose, gpio) {
 				function writeOn(){
 					gpio.write(pinNum, true, function(err){
 						if(err) throw err;
-						console.log('Pin On');
+						console.log(pinNum + 'Pin On');
 					});
 					setTimeout(function() {
 						gpio.destroy(function() {
