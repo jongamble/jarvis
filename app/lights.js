@@ -22,11 +22,11 @@ module.exports = function(app, mongoose, gpio) {
 		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
 			// Toggle LED
-			//gpio.setup(11, gpio.DIR_OUT, write);
+			gpio.setup(11, gpio.DIR_OUT, write);
 			gpio.destroy(function(){
 				return;
 			});
-			/*if(light.status){
+			if(light.status == true){
 				function write(){
 					gpio.write(11, false, function(err){
 						if(err) throw err;
@@ -52,7 +52,7 @@ module.exports = function(app, mongoose, gpio) {
 						});
 					}, 800);
 				}
-			}*/
+			}
 
 			// Write to DB
 			light.status = !light.status;
