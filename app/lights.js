@@ -18,7 +18,7 @@ module.exports = function(app, mongoose, gpio) {
 		});
 	});
 
-	app.get('/lights/lightSwitch/:id', function(req,res){
+	app.post('/lights/lightSwitch/:id', function(req,res){
 		Lights.findOne({id: req.params.id}, function(err, light){
 			if (err) return next(err);
 			// Toggle LED
