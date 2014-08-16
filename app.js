@@ -5,7 +5,7 @@ var port = process.env.PORT || 4000;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
-var gpio = require('rpi-gpio');
+var gpio = require('pi-gpio');
 
 
 var configDB = require('./config/database.js');
