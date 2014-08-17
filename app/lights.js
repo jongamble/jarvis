@@ -60,7 +60,8 @@ module.exports = function(app, mongoose, gpio) {
 			console.log(light);
 			light.save(function(err){
 				if (err) console.log(err);
-				res.redirect('/lights');
+				return;
+				//res.redirect('/lights');
 			});
 		});
 	});
