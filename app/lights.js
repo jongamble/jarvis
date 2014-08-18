@@ -34,7 +34,7 @@ module.exports = function(app, mongoose, gpio) {
 						console.log('Closed pins');
 						return;
 					});
-				}, 800);
+				}, 200);
 			}
 			function writeOn(){
 				gpio.write(pinNum, true, function(err){
@@ -46,7 +46,7 @@ module.exports = function(app, mongoose, gpio) {
 						console.log('Closed pins');
 						return;
 					});
-				}, 800);
+				}, 200);
 			}
 			if(light.status == true){
 				gpio.setup(pinNum, gpio.DIR_OUT, writeOff);
