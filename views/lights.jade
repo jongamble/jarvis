@@ -11,7 +11,7 @@ include ./inc/header.jade
 						tr(ng-repeat="light in lights")
 							td.switchLabel {{light.name}}
 							td
-								a.switchButton(ng-click="lightSwitchToggle({{light.id}})", ng-class="{active: {{light.status}} == true}") 
+								button.switchButton(ng-click="lightSwitchToggle({{light.id}})", ng-class="{active: {{light.status}} == true}") 
 									//- href="/lights/lightSwitch/{{light.id}}" 
 									i.fa.fa-power-off
 		
