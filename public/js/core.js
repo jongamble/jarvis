@@ -24,9 +24,11 @@ function lightsController($scope, $http) {
 
 		request.success(function(){
 			console.log('Light Switched: '+$index);
+			return false;
 		}).
 		error(function(data){
 			console.log('Error: ' + data);
+			return false;
 		});
 	};
 };
