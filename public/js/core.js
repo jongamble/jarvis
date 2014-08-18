@@ -16,6 +16,9 @@ function lightsController($scope, $http) {
 
 	
 	$scope.lightSwitchToggle = function($index){
+
+		alert('success');
+		return false;
 		var request = $http({
             method: "post",
             url: "/lights/lightSwitch/" + $index,
