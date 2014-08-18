@@ -7,6 +7,12 @@ Home automation utilizing Node.js on a network of Raspberry Pi and Arduino micro
 
 # Changelog
 
+## Version 0.4.2
+- Adding Socket.io for implementing seamless sockets for switch responses
+
+## Version 0.4.1
+- Updating the POC to use pin numbers from DB when turning on/off LEDs
+
 ## Version 0.4.0
 - POC to turn on and off LED connected to GPIO port on light button press
 - Adding Pin to collection schema
