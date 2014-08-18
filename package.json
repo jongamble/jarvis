@@ -19,10 +19,10 @@
   "dependencies": {
     "connect-flash": "~0.1.1",
     "express": "~4.8.0",
+    "express.io": "^1.1.13",
     "jade": "~1.5.0",
     "mongoose": "~3.8.14",
-    "rpi-gpio": "^0.5.0",
-    "socket.io": "^1.0.6"
+    "rpi-gpio": "^0.5.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

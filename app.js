@@ -1,5 +1,5 @@
 // set variables for environment
-var express = require('express');
+var express = require('express.io');
 var app = express();
 var port = process.env.PORT || 4000;
 var mongoose = require('mongoose');
