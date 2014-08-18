@@ -57,9 +57,9 @@ module.exports = function(app, mongoose, gpio) {
 
 			// Write to DB
 			light.status = !light.status;
-			console.log(light);
 			light.save(function(err){
 				if (err) console.log(err);
+				console.log(light);
 				//return;
 				res.redirect('/lights');
 			});
