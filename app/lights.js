@@ -60,14 +60,8 @@ module.exports = function(app, mongoose, gpio) {
 			console.log(light);
 			light.save(function(err){
 				if (err) console.log(err);
-
-				Lights.find().exec(function(err, items){
-					res.render('lights', {
-						items:items //get light data and pass to template
-					});
-				});
 				//return;
-				//res.redirect('/lights');
+				res.redirect('/lights');
 			});
 		});
 	});
