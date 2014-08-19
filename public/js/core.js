@@ -1,7 +1,7 @@
 // public/js/core.js
 var appFunctions = angular.module('appFunctions', []);
 
-function lightsController($scope, $http) {
+function lightsController($scope, $http, socket) {
 	$scope.formData = {};
 
 	// when landing on the page, get all todos and show them
