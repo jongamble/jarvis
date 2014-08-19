@@ -60,7 +60,6 @@ module.exports = function(app, mongoose, gpio) {
 			console.log(light);
 			light.save(function(err){
 				if (err) console.log(err);
-				$scope.$apply(light);
 				//return;
 				//res.redirect('/lights');
 			});
