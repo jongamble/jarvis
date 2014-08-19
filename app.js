@@ -1,5 +1,5 @@
 // set variables for environment
-var express = require('express.io');
+var express = require('express');
 var app = express();
 var port = process.env.PORT || 4000;
 var mongoose = require('mongoose');
@@ -7,6 +7,8 @@ var flash = require('connect-flash');
 var path = require('path');
 var gpio = require('rpi-gpio');
 
+// Hook Socket.io into Express
+var io = require('socket.io').listen(app);	
 
 var configDB = require('./config/database.js');
 
@@ -29,6 +31,10 @@ require('./app/lights.js')(app, mongoose, gpio);
 require('./app/garage.js')(app);
 require('./app/sensors.js')(app);
 require('./app/settings.js')(app);
+
+
+io.sockets.on('connection', socket);
+
 
 // Set server port
 app.listen(port);
