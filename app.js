@@ -1,7 +1,7 @@
 // set variables for environment
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
