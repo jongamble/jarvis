@@ -3,9 +3,7 @@ var express = require('express')
   , app = express()
   , http = require('http')
   , server = http.createServer(app)
-  , io = require('socket.io').listen(server);,
-http = require('http'), 
-server = http.createServer(app);
+  , io = require('socket.io').listen(server);
 
 var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
