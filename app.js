@@ -37,7 +37,12 @@ require('./app/sensors.js')(app);
 require('./app/settings.js')(app);
 
 
-io.sockets.on('connection', socket);
+io.sockets.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
 
 
 // Set server port
