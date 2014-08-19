@@ -1,14 +1,20 @@
 // set variables for environment
-var app = express()
+var express = require('express')
+  , app = express()
   , http = require('http')
   , server = http.createServer(app)
-  , io = require('socket.io').listen(server);
+  , io = require('socket.io').listen(server);,
+http = require('http'), 
+server = http.createServer(app);
+
 var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
 var gpio = require('rpi-gpio');
-	
+
+// Hook Socket.io into Express
+var io = require('socket.io').listen(server);	
 
 var configDB = require('./config/database.js');
 
