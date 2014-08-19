@@ -1,5 +1,7 @@
 // set variables for environment
-var express = require('express');
+var express = require('express'),
+http = require('http'), 
+server = http.createServer(app);
 var app = express();
 var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
@@ -37,5 +39,5 @@ io.sockets.on('connection', socket);
 
 
 // Set server port
-app.listen(port);
+server.listen(port);
 console.log('server is running');
