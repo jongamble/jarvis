@@ -32,6 +32,7 @@ module.exports = function(app, mongoose, gpio) {
 				setTimeout(function() {
 					gpio.destroy(function() {
 						console.log('Closed pins');
+						res.redirect('/lights');
 						return;
 					});
 				}, 100);
@@ -44,8 +45,10 @@ module.exports = function(app, mongoose, gpio) {
 				setTimeout(function() {
 					gpio.destroy(function() {
 						console.log('Closed pins');
+						res.redirect('/lights');
 						return;
 					});
+
 				}, 100);
 			}
 			if(light.status == true){
@@ -61,7 +64,7 @@ module.exports = function(app, mongoose, gpio) {
 			light.save(function(err){
 				if (err) console.log(err);
 				//return;
-				res.redirect('/lights');
+				
 			});
 		});
 	});
