@@ -5,14 +5,12 @@ var express = require('express')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server);
 
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 4000;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
 var gpio = require('rpi-gpio');
 
-// Hook Socket.io into Express
-var io = require('socket.io').listen(server);	
 
 var configDB = require('./config/database.js');
 
@@ -25,6 +23,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static('public'));
 
+io.sockets.on('connection', function (socket) {
+	socket.on('captain', function (data) {
+		console.log(data);
+		//sendMessage(data.message, socket);
+		socket.emit('Hello');
+	});
+});
+
+
+// Set server port
+var io = require('socket.io').listen(app.listen(port));
 // set routes
     app.get('/', function(req, res) {
       res.render('index');
@@ -37,14 +46,4 @@ require('./app/sensors.js')(app);
 require('./app/settings.js')(app);
 
 
-io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
-
-
-// Set server port
-server.listen(port);
 console.log('server is running');
