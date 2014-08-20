@@ -5,7 +5,7 @@ var express = require('express')
   , server = http.createServer(app)
   , io = require('socket.io').listen(server);
 
-var port = process.env.PORT || 4000;
+var port = process.env.PORT || 80;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
