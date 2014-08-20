@@ -28,6 +28,7 @@ io.sockets.on('connection', function (socket) {
 		console.log(data);
 		//sendMessage(data.message, socket);
 		socket.emit('Hello');
+		console.log('socket connection');
 	});
 });
 
