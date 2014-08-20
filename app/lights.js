@@ -6,7 +6,7 @@ module.exports = function(app, mongoose, gpio) {
 	// set routes
 	app.get('/lights', function(req, res) {
 		Lights.find().exec(function(err, items){
-			res.io.render('lights', {
+			res.render('lights', {
 				items:items //get light data and pass to template
 			});
 		});
