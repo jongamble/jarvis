@@ -1,11 +1,7 @@
 // set variables for environment
-var express = require('express')
-  , app = express()
-  , http = require('http')
-  , server = http.createServer(app)
-  , io = require('socket.io').listen(server);
-
-var port = process.env.PORT || 80;
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 4000;
 var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var path = require('path');
@@ -26,18 +22,6 @@ app.set('view engine', 'jade');
 app.use( bodyParser.json() );
 app.use(express.static('public'));
 
-io.sockets.on('connection', function (socket) {
-	socket.on('captain', function (data) {
-		console.log(data);
-		//sendMessage(data.message, socket);
-		socket.emit('Hello');
-		console.log('socket connection');
-	});
-});
-
-
-// Set server port
-var io = require('socket.io').listen(app.listen(port));
 // set routes
     app.get('/', function(req, res) {
       res.render('index');
@@ -47,7 +31,7 @@ var io = require('socket.io').listen(app.listen(port));
 require('./app/lights.js')(app, mongoose, gpio);
 require('./app/garage.js')(app);
 require('./app/sensors.js')(app);
-require('./app/settings.js')(app);
+require('./app/settings.js')(app, mongoose);
 
-
+app.listen(port);
 console.log('server is running');

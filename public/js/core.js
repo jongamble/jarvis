@@ -41,19 +41,18 @@ function lightsController($scope, $http) {
 
 
 function lightForm($scope, $http) {
-	$scope.formData = {};
+	$scope.light = {};
 
 	$scope.lightFormPost = function($index){
 		var request = $http({
 			method: "post",
 			url: "/settings/createLight",
 			data: $index
-		});
-
-		request.success(function(){
+		}).
+		success(function(data){
 			console.log('Light Created');
-			console.log($index);
-			$scope.addLightForm = {};
+			console.log(data);
+			$scope.light = {};
 			return false;
 		}).
 		error(function(data){

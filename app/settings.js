@@ -16,6 +16,6 @@ module.exports = function(app, mongoose) {
     		if (err) return console.error(err);
     		console.log(light);
     	});
-    	return;
+    	res.json(light);
     });
 }
