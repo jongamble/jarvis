@@ -62,3 +62,8 @@ function lightForm($scope, $http) {
 
 	};
 };
+
+function lightForm($scope, $http) {
+	$scope.formData = {};
+
+};
