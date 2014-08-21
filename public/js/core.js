@@ -63,7 +63,7 @@ function lightForm($scope, $http) {
 	};
 };
 
-function lightForm($scope, $http) {
+function sensorForm($scope, $http) {
 	$scope.formData = {};
 
 };
