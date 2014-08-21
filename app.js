@@ -24,7 +24,6 @@ mongoose.connect(configDB.url); // connect to our database
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use( bodyParser.json() );
-app.use(express.json()); 
 app.use(express.static('public'));
 
 io.sockets.on('connection', function (socket) {
