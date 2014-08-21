@@ -10,7 +10,7 @@ include ./inc/header.jade
 						.panel-heading 
 							h3.panel-title Add A New Light
 						.panel-body(ng-controller="lightForm")
-							form(role="form")
+							form(role="form", name="addLightForm")
 								.form-group
 									label(for="id") Light ID
 									input.form-control(name="id", id="id", placeholder="ID (no spaces)", ng-model="light.id", value="{{light.id}}")

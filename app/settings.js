@@ -15,6 +15,7 @@ module.exports = function(app, mongoose) {
     	light.save(function(err, light){
     		if (err) return console.error(err);
     		console.log(light);
-    	})
+    	});
+    	return;
     });
 }

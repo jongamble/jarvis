@@ -53,7 +53,7 @@ function lightForm($scope, $http) {
 		request.success(function(){
 			console.log('Light Created');
 			console.log($index);
-			$scope.light = {};
+			$scope.addLightForm = {};
 			return false;
 		}).
 		error(function(data){
