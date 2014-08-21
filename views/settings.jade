@@ -13,16 +13,16 @@ include ./inc/header.jade
 							form(role="form")
 								.form-group
 									label(for="id") Light ID
-									input.form-control(name="id", id="id", placeholder="ID (no spaces)", ng-model="light.id")
+									input.form-control(name="id", id="id", placeholder="ID (no spaces)", ng-model="light.id", value="light.id")
 								.form-group
 									label(for="name") Light Name
-									input.form-control(name="name", id="name", placeholder="Light Name (informal)", ng-model="light.name")
+									input.form-control(name="name", id="name", placeholder="Light Name (informal)", ng-model="light.name", value="light.name")
 								.form-group
 									label(for="pin") Pin Number
-									input.form-control(name="pin", id="pin", placeholder="Pin Number (integer)", ng-model="light.pin")
+									input.form-control(name="pin", id="pin", placeholder="Pin Number (integer)", ng-model="light.pin", value="light.pin")
 								.form-group
 									label(for="status") Status
-									select.form-control(name="status", id="status", ng-model="light.status")
+									select.form-control(name="status", id="status", ng-model="light.status", value="light.status")
 										option(value="false") False
 										option(value="true") True
 								.form-group
