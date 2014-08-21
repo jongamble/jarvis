@@ -5,28 +5,28 @@ include ./inc/header.jade
 			.container
 				.page-header
 					h2 Setting Controls
-				
-				.panel.panel-default
-					.panel-heading 
-						h3.panel-title Add A New Light
-					.panel-body
-						form(role="form")
-							.form-group
-								label(for="id") Light ID
-								input.form-control(name="id", id="id", placeholder="ID (no spaces)")
-							.form-group
-								label(for="name") Light Name
-								input.form-control(name="name", id="name", placeholder="Light Name (informal)")
-							.form-group
-								label(for="pin") Pin Number
-								input.form-control(name="pin", id="pin", placeholder="Pin Number (integer)")
-							.form-group
-								label(for="status") Status
-								select.form-control(name="status", id="status")
-									option(value="false") False
-									option(value="true") True
-							.form-group
-								button.btn.btn-primary(type="button", name="Submit", value="Submit") Submit
+				.col-md-6
+					.panel.panel-default
+						.panel-heading 
+							h3.panel-title Add A New Light
+						.panel-body
+							form(role="form")
+								.form-group
+									label(for="id") Light ID
+									input.form-control(name="id", id="id", placeholder="ID (no spaces)")
+								.form-group
+									label(for="name") Light Name
+									input.form-control(name="name", id="name", placeholder="Light Name (informal)")
+								.form-group
+									label(for="pin") Pin Number
+									input.form-control(name="pin", id="pin", placeholder="Pin Number (integer)")
+								.form-group
+									label(for="status") Status
+									select.form-control(name="status", id="status")
+										option(value="false") False
+										option(value="true") True
+								.form-group
+									button.btn.btn-primary(type="button", name="Submit", value="Submit") Submit
 
 
 				
