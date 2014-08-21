@@ -1,6 +1,6 @@
 // app/lights.js
 
-var Lights	=	require('./models/lights')
+var Lights	=	require('./models/lights');
 
 module.exports = function(app, mongoose, gpio) { 
 	// set routes

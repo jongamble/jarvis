@@ -11,6 +11,8 @@ var flash = require('connect-flash');
 var path = require('path');
 var gpio = require('rpi-gpio');
 
+var bodyParser = require('body-parser')
+
 
 var configDB = require('./config/database.js');
 
@@ -21,6 +23,8 @@ mongoose.connect(configDB.url); // connect to our database
 // views as directory for all template files
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use( bodyParser.json() );
+app.use(express.json()); 
 app.use(express.static('public'));
 
 io.sockets.on('connection', function (socket) {
