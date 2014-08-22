@@ -30,7 +30,7 @@ app.use(express.static('public'));
 
 require('./app/lights.js')(app, mongoose, gpio);
 require('./app/garage.js')(app);
-require('./app/sensors.js')(app);
+require('./app/sensors.js')(app, mongoose);
 require('./app/settings.js')(app, mongoose);
 
 app.listen(port);

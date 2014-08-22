@@ -1,9 +1,22 @@
 include ./inc/header.jade
-	body
+	body(ng-controller="sensorsController")
 		include ./inc/internal-head.jade
 		section.internal-content
 			.container
-				h2 Sensor Controls
-				p This feature is currently under development.
+				.page-header
+					h2 Sensor Controls:
+				
+				div.panel.panel-default
+					div.panel-heading Sensor Groups
+					table.table.table-striped
+						tr
+							th Name
+							th Pin
+							th Status
+						tr(ng-repeat="sensor in sensors")
+							td.switchLabel {{sensor.name}}
+							td.switchLabel {{sensor.pin}}
+							td.switchLabel {{sensor.status}}
+							
 				
 include ./inc/footer.jade

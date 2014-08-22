@@ -1,12 +1,22 @@
 # Changelog
 
+## Version 0.6.0 - Settings
+- Creating the backend and functionality for adding/editing/deleting Lights and Sensors in the Settings section
+
+## Version 0.5.0 - Sensors
+- Adding Sensors (duplicated light content)
+
+## Version 0.4.3
+- Removing Socket.io
+- Adding Angular Call back functionality to remove need for reloads on input
+
 ## Version 0.4.2
 - Adding Socket.io for implementing seamless sockets for switch responses
 
 ## Version 0.4.1
 - Updating the POC to use pin numbers from DB when turning on/off LEDs
 
-## Version 0.4.0
+## Version 0.4.0 - Lights
 - POC to turn on and off LED connected to GPIO port on light button press
 - Adding Pin to collection schema
 

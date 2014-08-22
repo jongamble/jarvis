@@ -1,0 +1,29 @@
+include ./inc/header.jade
+	body
+		include ./inc/internal-head.jade
+		section.internal-content
+			.container
+				.page-header
+					h2 Setting Controls
+				.col-md-6
+					.panel.panel-default
+						.panel-heading 
+							h3.panel-title Edit A Sensor
+						.panel-body(ng-controller="editSensor")
+							form(role="form", name="editSensorForms", ng-submit="editSensorForm()")
+								.form-group
+									label(for="id") Sensor ID
+									input.form-control(name="id", id="id", placeholder="ID (no spaces)", ng-model="sensor.id", ng-init="sensor.id='#{sensor.id}'", disabled) 
+								.form-group
+									label(for="name") Sensor Name
+									input.form-control(name="name", id="name", placeholder="Sensor Name (informal)", ng-init="sensor.name='#{sensor.name}'", ng-model="sensor.name")
+								.form-group
+									label(for="pin") Pin Number
+									input.form-control(name="pin", id="pin", placeholder="Pin Number (integer)", ng-init="sensor.pin='#{sensor.pin}'", ng-model="sensor.pin")
+								.form-group
+									label(for="status") Status
+									input.form-control(name="status", id="status", ng-init="sensor.status='#{sensor.status}'", ng-model="sensor.status", placeholder="Status")
+								.form-group
+									button.btn.btn-primary(type="submit", name="Submit", value="Submit") Submit
+				
+include ./inc/footer.jade

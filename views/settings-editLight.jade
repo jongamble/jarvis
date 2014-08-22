@@ -1,0 +1,31 @@
+include ./inc/header.jade
+	body
+		include ./inc/internal-head.jade
+		section.internal-content
+			.container
+				.page-header
+					h2 Setting Controls
+				.col-md-6
+					.panel.panel-default
+						.panel-heading 
+							h3.panel-title Edit A Light
+						.panel-body(ng-controller="editLight")
+							form(role="form", name="editLightForms", ng-submit="editLightForm()")
+								.form-group
+									label(for="id") Light ID
+									input.form-control(name="id", id="id", placeholder="ID (no spaces)", ng-model="light.id", ng-init="light.id='#{light.id}'", disabled) 
+								.form-group
+									label(for="name") Light Name
+									input.form-control(name="name", id="name", placeholder="Light Name (informal)", ng-init="light.name='#{light.name}'", ng-model="light.name")
+								.form-group
+									label(for="pin") Pin Number
+									input.form-control(name="pin", id="pin", placeholder="Pin Number (integer)", ng-init="light.pin='#{light.pin}'", ng-model="light.pin")
+								.form-group
+									label(for="status") Status
+									select.form-control(name="status", id="status", ng-init="light.status='#{light.status}'", ng-model="light.status")
+										option(value="false") False
+										option(value="true") True
+								.form-group
+									button.btn.btn-primary(type="submit", name="Submit", value="Submit") Submit
+				
+include ./inc/footer.jade
